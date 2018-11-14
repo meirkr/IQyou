@@ -27,6 +27,8 @@ namespace IQyouWebApp
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+
+            services.AddEntityFrameworkSqlite();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,6 +55,7 @@ namespace IQyouWebApp
                     template: "{controller}/{action=Index}/{id?}");
             });
 
+            app.db
             app.UseSpa(spa =>
             {
                 // To learn more about options for serving an Angular SPA from ASP.NET Core,
